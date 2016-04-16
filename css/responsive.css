@@ -274,6 +274,18 @@
     padding: 70px 25px 110px;
   }
 
+  .dates-content{
+    width: 100%;
+  }
+
+  #event{
+    display: none;
+  }
+
+  #contact-form{
+    background-color: rgba(0,0,0,0);
+  }
+
 }
 
 /* XS Portrait */
@@ -293,10 +305,10 @@
 
   /* Home */
 
-  #home {
+ /* #home {
     margin-top: 18%;
   }
-
+*/
   .fixed-menu .container {
     width: 100%;
   }
@@ -308,8 +320,15 @@
 
   #main-slider .carousel-caption {
     bottom: 17%;
-    padding: 10px;
+    padding: 30px;
     line-height: 0;
+    width: 100%;
+    text-align: center;
+    background: none;
+    opacity: 1;
+  }
+  #main-slider .carousel-caption a i{
+    display: none;
   }
 
   #main-slider .carousel-caption h2 {
@@ -323,7 +342,11 @@
 
   #main-slider .carousel-caption a {
     font-size: 12px;
-    color: #2da1c5;
+    background-color: #2da1c5;
+    color: white;
+    padding: 8px;
+    position: relative;
+    top: 10px;
   }
 
   .carousel-indicators {
