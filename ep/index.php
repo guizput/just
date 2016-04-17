@@ -10,11 +10,11 @@ include $_SERVER["DOCUMENT_ROOT"] . '/ep/controllers/db-operations.php';
 
 if(isset($codeconfirm) && isset($emailconfirm)){
 
-	$db->exec('DELETE FROM codes WHERE code = "'.$codeconfirm.'"');
+	$db->exec('DELETE FROM codes WHERE code = "'.htmlspecialchars($codeconfirm).'"');
 
 	if(!in_array($emailconfirm, $emails)){
 
-		$db->exec('INSERT INTO emails(email) VALUES("'.$emailconfirm.'")');
+		$db->exec('INSERT INTO emails(email) VALUES("'.htmlspecialchars($emailconfirm).'")');
 
 		include $_SERVER["DOCUMENT_ROOT"] . '/ep/controllers/serve.php';
 		serveFile();
@@ -30,9 +30,9 @@ if(isset($codeconfirm) && isset($emailconfirm)){
 	if(isset($code) && isset($email)){
 
 		// Vérification du code
-		if(in_array($code, $codes) && !in_array($email, $codes)){
+		if(in_array($code, $codes)){
 
-			$db->exec('UPDATE codes SET email = "'.$email.'" WHERE code = "'.$code.'"');
+			$db->exec('UPDATE codes SET email = "'.htmlspecialchars($email).'" WHERE code = "'.htmlspecialchars($code).'"');
 
 			$expediteur = 'contact@just-band.com';
 			$domaine = 'Just.';
@@ -40,7 +40,7 @@ if(isset($codeconfirm) && isset($emailconfirm)){
 
 			sendEmail($email, $expediteur, $domaine, $subject, $code);
 
-			$db->exec('UPDATE codes SET sent = 1 WHERE code = "'.$code.'"');
+			$db->exec('UPDATE codes SET sent = 1 WHERE code = "'.htmlspecialchars($code).'"');
 
 			include $_SERVER["DOCUMENT_ROOT"] . '/ep/templates/success.php';
 
