@@ -35,10 +35,11 @@ function sendEmail($destinataire, $expediteur, $domaine, $subject, $nom, $qualit
 	//=========
 	 
 	//=====Création du header de l'e-mail.
-	$header = "From: ".$domaine." ".$expediteur.$passage_ligne;
-	$header.= "Reply-to: ".$expediteur.$passage_ligne;
+	$header = "From: '".$domaine."' ".$expediteur.$passage_ligne;
 	$header.= "MIME-Version: 1.0".$passage_ligne;
 	$header.= "Content-Type: multipart/mixed;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
+	$header.= "Sender: 	115-prod.mail-out.ovh.net";
+	$header.= "To: ".$destinataire;
 	//==========
 	 
 	//=====Création du message.

@@ -6,6 +6,7 @@ $codeconfirm = $_GET['codeconfirm'];
 $emailconfirm = $_GET['emailconfirm'];
 
 include $_SERVER["DOCUMENT_ROOT"] . '/ep/controllers/email.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/ep/controllers/email-poll.php';
 include $_SERVER["DOCUMENT_ROOT"] . '/ep/controllers/db-operations.php';
 
 if(isset($codeconfirm) && isset($emailconfirm)){
@@ -14,7 +15,15 @@ if(isset($codeconfirm) && isset($emailconfirm)){
 
 	if(!in_array($emailconfirm, $emails)){
 
-		$db->exec('INSERT INTO emails(email) VALUES("'.htmlspecialchars($emailconfirm).'")');
+		$time = time();
+
+		$db->exec('INSERT INTO emails(email, time) VALUES("'.htmlspecialchars($emailconfirm).'", "'.htmlspecialchars($time).'")');
+
+		$expediteur = 'contact@just-band.com';
+		$domaine = 'Just.';
+		$subject = 'Just. | Donnez-nous votre avis.';
+
+		sendEmailPoll($emailconfirm, $expediteur, $domaine, $subject);
 
 		include $_SERVER["DOCUMENT_ROOT"] . '/ep/controllers/serve.php';
 		serveFile();

@@ -41,7 +41,7 @@
         <strong><?php echo $email; ?></strong>. 
       </p>  
       <br><br>
-      <small>Vérifiez dans vos SPAMS si l'email n'y est pas atterri.</small>
+      <small>S'il vous plaît, vérifiez que l'email n'a pas atterri dans vos spams</small>
 
 	 </div>	
 
