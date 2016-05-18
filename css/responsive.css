@@ -142,10 +142,6 @@
     padding: 7px 25px;
   }
 
-  #home {
-    margin-top: 10%;
-  }
-
   #main-slider .carousel-caption {
     bottom: 17%;
     padding: 10px;
@@ -279,7 +275,8 @@
   }
 
   #event{
-    display: none;
+    
+    text-align: center;
   }
 
   #contact-form{
@@ -468,6 +465,14 @@
   .contact-section {
     background-position: left 0 bottom 0;
     background-size: cover;
+  }
+
+  #yt-thumbnail{
+    display: none;
+  }
+
+  #home {
+    margin-top: 10%;
   }
 
 }

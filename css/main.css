@@ -182,8 +182,8 @@ h2 {
   overflow: hidden;
 }
 
-#main-slider img {
-  width: 100%
+#main-slider img:not(#yt-thumbnail img) {
+  width: 100%;
 }
 
 #main-slider 
@@ -418,6 +418,11 @@ h2 {
 
 .single-event {
   margin-bottom: 70px;
+  text-align: center;
+}
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+  display: inline-block;
 }
 
 .single-event h4 {
@@ -560,7 +565,7 @@ h2 {
 **************************/
 
 #twitter {
-  background-color: #ecedef;
+  background-color: #FC5A2F;
   background-position: center bottom;
   background-size: cover;
   background-repeat:no-repeat;
@@ -776,6 +781,9 @@ h2 {
   color: #fff
 }
 
+#yt-thumbnail{
+    display: block;
+  }
 
 
 /*************************

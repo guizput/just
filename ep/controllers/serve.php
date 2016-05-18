@@ -4,7 +4,7 @@
 function serveFile(){
 
 	// File's name and location
-	$filename = "test.zip";
+	$filename = "just-ep.zip";
 	$filepath = $_SERVER["DOCUMENT_ROOT"] . "/ep/file/";
 
 	// http headers for zip downloads
