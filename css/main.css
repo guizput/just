@@ -36,7 +36,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Yanone Kaffeesatz', 'sans-serif';
   font-weight: 300;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 h2 {
@@ -182,8 +182,8 @@ h2 {
   overflow: hidden;
 }
 
-#main-slider img {
-  width: 100%
+#main-slider img:not(#yt-thumbnail img) {
+  width: 100%;
 }
 
 #main-slider 
@@ -394,7 +394,7 @@ h2 {
 #event {
   background-color: #903f3f;
   background-image: url("../images/performar-bg.jpg");
-  background-position: 50% 0;
+  /*background-position: 50% 0;*/
   background-size: contain;
   position: relative;
   background-repeat: no-repeat;
@@ -413,11 +413,16 @@ h2 {
   font-weight: 300;
   margin-bottom: 40px;
   margin-top: 70px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 .single-event {
   margin-bottom: 70px;
+  text-align: center;
+}
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+  display: inline-block;
 }
 
 .single-event h4 {
@@ -471,9 +476,6 @@ h2 {
   display: block;
 }
 
-.img-circle:hover{
-  border: 2px solid white;
-}
 /*************************
 *******About CSS**********
 **************************/
@@ -563,8 +565,7 @@ h2 {
 **************************/
 
 #twitter {
-  background-color: #ecedef;
-  background-image: url("../images/music-bg.jpg");
+  background-color: #FC5A2F;
   background-position: center bottom;
   background-size: cover;
   background-repeat:no-repeat;
@@ -780,6 +781,9 @@ h2 {
   color: #fff
 }
 
+#yt-thumbnail{
+    display: block;
+  }
 
 
 /*************************
@@ -805,4 +809,7 @@ h2 {
   color:#1B7B98
 }
 
+#contact-form{
+    background-color: rgba(0,0,0,0.5);
+  }
 
