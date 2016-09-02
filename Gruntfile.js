@@ -60,7 +60,7 @@ module.exports = function(grunt) {
           }
         },
 
-        jade: {
+        pug: {
           compile: {
             options: {
               data: {
@@ -69,16 +69,16 @@ module.exports = function(grunt) {
               pretty: true
             },
             files: {
-              'htdocs/index.html': ['src/jade/*.jade']
+              'htdocs/index.html': ['src/pug/*.pug']
             }
           }
         },
 
         watch: {
             options: { livereload: true },
-            jade: {
-              files: ['src/jade/*.jade'],
-              tasks: ['jade']
+            pug: {
+              files: ['src/pug/*.pug'],
+              tasks: ['pug']
             },
             scripts: {
               files: ['src/js/*.js', 'src/js/modules/*.js'],
@@ -115,11 +115,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
 
 
     // 3. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'jade']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'pug']);
 };
