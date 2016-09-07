@@ -12,7 +12,7 @@ module.exports = function(grunt) {
               lineNumbers: true
             },
             files: {                         // Dictionary of files 
-              'htdocs/css/style.css': 'src/sass/*.scss'
+              'htdocs/css/style.css': 'src/sass/*.sass'
             }
           }
         },
@@ -75,30 +75,25 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            options: { livereload: true },
             pug: {
               files: ['src/pug/*.pug'],
-              tasks: ['pug']
+              tasks: ['pug'],
+              options: { livereload: true }
             },
             scripts: {
               files: ['src/js/*.js', 'src/js/modules/*.js'],
               tasks: ['concat', 'uglify'],
               options: {
                 spawn: false,
+                livereload: true
               }
             },
             css: {
-              files: ['src/sass/*.scss'],
+              files: ['src/sass/*.sass'],
               tasks: ['sass', 'autoprefixer'],
               options: {
                 spawn: false,
-              }
-            },
-            cssmin: {
-              files: ['htdocs/css/style.css'],
-              tasks: ['cssmin'],
-              options: {
-                spawn: false,
+                livereload: true
               }
             }
 
