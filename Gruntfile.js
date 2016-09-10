@@ -12,7 +12,7 @@ module.exports = function(grunt) {
               lineNumbers: true
             },
             files: {                         // Dictionary of files 
-              'htdocs/css/style.css': 'src/sass/*.sass'
+              'htdocs/css/style.css': 'src/scss/*.scss'
             }
           }
         },
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
               }
             },
             css: {
-              files: ['src/sass/*.sass'],
+              files: ['src/scss/*.scss'],
               tasks: ['sass', 'autoprefixer'],
               options: {
                 spawn: false,

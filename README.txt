@@ -16,7 +16,7 @@
 
 * Supporting latest browsers versions (-2) + IE11 & IE10
 * Adapt the assets to the device (images size, scripts, templates):
-	- Checking device with PHP [https://github.com/guizput/Mobile-Detect]
+	- Checking device with PHP [https://github.com/serbanghita/Mobile-Detect]
 	- HammerJs for mobiles & tablets
 	- Responsive design
 	- Different HTML template for Hero and Video sections
