@@ -12,7 +12,8 @@ module.exports = function(grunt) {
               lineNumbers: true
             },
             files: {                         // Dictionary of files 
-              'htdocs/css/style.css': 'src/scss/*.scss'
+              'htdocs/css/desktop/style.css': 'src/scss/desktop.scss',
+              'htdocs/css/mobile/style.css': 'src/scss/mobile.scss'
             }
           }
         },
@@ -24,7 +25,8 @@ module.exports = function(grunt) {
           },
           target: {
             files: {
-              'htdocs/css/style.min.css': 'htdocs/css/style.css'
+              'htdocs/css/desktop/style.min.css': 'htdocs/css/desktop/style.css',
+              'htdocs/css/mobile/style.min.css': 'htdocs/css/mobile/style.css'
             }
           }
         },
@@ -35,7 +37,8 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'htdocs/css/style.css': 'htdocs/css/style.css'
+                    'htdocs/css/desktop/style.css': 'htdocs/css/desktop/style.css',
+                    'htdocs/css/mobile/style.css': 'htdocs/css/mobile/style.css'
                 }
             }
 
