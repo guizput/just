@@ -1,0 +1,21 @@
+section{
+
+	width: 100%;
+	position: relative;
+	top: 50px;
+	text-align: center;
+
+	&:not(#hero){
+		padding: 25px 0;
+	}
+
+}
+
+.cta{
+
+	padding: 15px;
+	display: inline-block;
+	text-decoration: none;
+	font-weight: 300;
+
+}

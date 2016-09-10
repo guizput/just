@@ -1,0 +1,37 @@
+#video{
+
+	background: url(../../img/video_bg-sm.jpg) no-repeat center center;
+	background-size: cover;
+	height: 425px;
+	color: $white;
+
+	.youtube-helper{
+
+		display: flex;		
+		align-items: center;
+		justify-content: space-around;
+		margin: 0 0 25px 0;
+
+		img{
+
+			width: 20px;
+
+		}
+
+		p{
+
+			width: 200px;
+			margin: 0;
+
+		}
+
+	}
+
+	.cta{
+
+		color: $youtube;
+		background-color: $white;
+
+	}
+
+}
