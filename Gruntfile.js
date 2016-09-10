@@ -98,9 +98,9 @@ module.exports = function(grunt) {
             },
             css: {
               files: ['src/scss/*.scss', 
-                      'src/base/scss/*.scss', 
-                      'src/desktop/*.scss', 
-                      'src/mobile/*.scss', 
+                      'src/scss/base/*.scss', 
+                      'src/scss/desktop/*.scss', 
+                      'src/scss/mobile/*.scss', 
                       'src/scss/desktop/sections/*.scss', 
                       'src/scss/mobile/sections/*.scss', 
                       ],
