@@ -1,6 +1,12 @@
-// @import 'hero';
-// @import 'about';
-// @import 'music';
-// @import 'video';
-// @import 'dates';
-// @import 'contact';
+@import 'hero';
+@import 'about';
+@import 'music';
+@import 'video';
+@import 'dates';
+@import 'contact';
+
+
+section{
+	position: relative;
+	top: 50px;
+}

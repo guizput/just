@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 
         autoprefixer: {
             options: {
-              browsers: ['last 13 versions', '> 5%','ie 8', 'ie 7','ie 9']
+              browsers: ['last 2 versions', 'ie 10', 'ie 11']
             },
             dist: {
                 files: {
@@ -80,7 +80,11 @@ module.exports = function(grunt) {
 
         watch: {
             pug: {
-              files: ['src/pug/*.pug'],
+              files: ['src/pug/desktop/*.pug', 
+                      'src/pug/mobile/*.pug', 
+                      'src/pug/desktop/modules/*.pug', 
+                      'src/pug/mobile/modules/*.pug'
+                      ],
               tasks: ['pug'],
               options: { livereload: true }
             },
@@ -93,7 +97,13 @@ module.exports = function(grunt) {
               }
             },
             css: {
-              files: ['src/scss/*.scss'],
+              files: ['src/scss/*.scss', 
+                      'src/base/scss/*.scss', 
+                      'src/desktop/*.scss', 
+                      'src/mobile/*.scss', 
+                      'src/scss/desktop/sections/*.scss', 
+                      'src/scss/mobile/sections/*.scss', 
+                      ],
               tasks: ['sass', 'autoprefixer'],
               options: {
                 spawn: false,
