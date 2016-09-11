@@ -2,8 +2,59 @@
 
 	background: url(../../img/video_bg-sm.jpg) no-repeat center center;
 	background-size: cover;
-	height: 425px;
 	color: $white;
+
+	.video-thumbnail{
+
+		position: relative;
+		margin: 0 0 25px 0;
+		height: 180px;
+		overflow: hidden;
+
+		.overlay{
+
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0,0,0,0.3);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img{
+
+				width: 50px;
+				z-index: 3;
+
+			}
+
+		}
+
+		.video-title{
+
+			position: absolute;
+			font:{
+				size: 0.6rem;
+			}
+			bottom: 40px;
+			left: 0;
+			background-color: $white;
+			color: $black;
+			padding: 10px 10px 10px 25px;
+			text-align: left;
+			opacity: 0.8;
+
+		}
+
+		img{
+
+			width: 100%;
+
+		}
+
+	}
 
 	.youtube-helper{
 
