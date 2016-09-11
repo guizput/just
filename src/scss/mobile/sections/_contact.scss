@@ -1,0 +1,62 @@
+section#contact{
+
+	background-color: $contact;
+	padding: 0 0 50px 0;
+
+	&:before{
+
+		content:'';
+		display: block;
+		height: 50px;
+		background-color: $contact;
+		transform: skewY(-5deg);
+		position: relative;
+		top: -15px;
+
+	}
+
+	.social-links{
+
+		display: flex;
+		justify-content: space-around;
+
+
+	}
+
+	.cta{
+
+		&#fb{
+
+			background-color: $facebook;
+			color: $white;
+
+		}
+
+		&#yt{
+
+			background-color: $youtube;
+			color: $white;
+
+		}
+
+
+	}
+
+	.line-sep{
+
+		background-color: #A9A9A9;
+		margin: 25px auto;
+
+	}
+
+	#email{
+
+		text-decoration: none;
+		color: $black; 
+		font:{
+			weight: 300;
+		}
+
+	}
+
+}
