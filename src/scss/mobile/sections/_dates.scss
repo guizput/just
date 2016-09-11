@@ -1,0 +1,36 @@
+#dates{
+
+	color: $white;
+	background: url(../../img/dates_bg-sm.jpg) no-repeat center center;
+	background-size: cover;
+
+}
+
+.dates{
+
+	text-align: left;
+	font-size: 0.8rem;
+
+	ul li{
+
+		padding: 10px;
+
+		text-indent: -1.5rem;
+		margin: 0 0 0 20px;
+
+		&:before{
+
+			background: url(../../img/loc.png) no-repeat center center;
+			background-size: cover;
+			content:'';
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			position: relative;
+			top: 6px;
+			margin: 0 10px 0 0;
+
+		}
+	}
+
+}
