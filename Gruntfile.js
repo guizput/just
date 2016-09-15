@@ -48,9 +48,9 @@ module.exports = function(grunt) {
             
           dist: {
                  src: [
-                     // 'js/libs/*.js',  All JS in the libs folder
-                     'src/js/*.js',
-                     'src/js/modules/*.js'
+                     'src/js/libs/*.js',
+                     'src/js/modules/*.js',
+                     'src/js/*.js'
                  ],
                  dest: 'htdocs/js/app.js',
           }
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
               options: { livereload: true }
             },
             scripts: {
-              files: ['src/js/*.js', 'src/js/modules/*.js'],
+              files: ['src/js/*.js', 'src/js/modules/*.js', 'src/js/libs/*.js'],
               tasks: ['concat', 'uglify'],
               options: {
                 spawn: false,

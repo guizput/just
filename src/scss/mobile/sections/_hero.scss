@@ -1,76 +1,9 @@
-header{
-
-	width: 100%;
-	position: relative;
-	background-color: $white;
-	position: fixed;
-	z-index: 999;
-
-	.nav-toggle{
-
-		position: absolute;
-		width: 40px;
-		height: 40px;
-		margin: 5px 0 0 15px;
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-
-		span,
-		span:before,
-		span:after {
-
-			content: '';
-			display: block;
-			width: 40px;
-			height: 2px;
-			background-color: $black;
-			position: relative;
-
-		}
-
-		span:before{
-
-			bottom: 10px;
-
-		}
-
-		span:after{
-
-			top: 8px;
-
-		}
-
-	}
-
-	img{
-
-		margin: 0 auto;
-		display: block;
-		width: 50px;
-
-	}
-
-}
-
 #hero{
 
 	background: url(../../img/hero-sm.jpg) no-repeat center center;
 	background-size: cover;
 	height: 200px;
 	overflow: hidden;
-
-	&:after{
-
-		content:'';
-		display: block;
-		height: 50px;
-		background-color: $white;
-		transform: skewY(-5deg);
-		position: relative;
-		top: 185px;
-
-	}
 
 }
 
