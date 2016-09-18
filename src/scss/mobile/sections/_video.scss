@@ -1,6 +1,6 @@
 #video{
 
-	background: url(../../img/video_bg-sm.jpg) no-repeat center center;
+	background: url(../../img/video_bg-md.jpg) no-repeat center center;
 	background-size: cover;
 	color: $white;
 
@@ -161,6 +161,21 @@
 		overflow: hidden;
 		position: relative;
 
+		.spinner{
+
+			top:50%;
+			left:50%;
+			transform: translate3d(-50%,-50%,0);
+
+			&:after{
+
+				border-left-color: $youtube;
+				border-right-color: $youtube;
+
+			}
+
+		}
+
 		iframe{
 
 			width: 100% !important;
@@ -168,6 +183,7 @@
 			position: absolute;
 			top:0;
 			left:0;
+			z-index: 2;
 
 		}
 
