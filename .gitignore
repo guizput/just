@@ -75,3 +75,6 @@ jspm_packages
 
 # htdocs
 htdocs/
+
+#Ignoring Youtube Credentials
+youtube/
