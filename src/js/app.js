@@ -116,7 +116,7 @@ function appearing(){
 			musicians = $('.musicians'),
 			dates = $('.dates');
 
-	if (wScroll > (musicians.offset().top - 500) && $('.trio.on').length < 3){
+	if (wScroll > (musicians.offset().top - 300) && $('.trio.on').length < 3){
 
 		$('.trio').each(function(i){
 
