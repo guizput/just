@@ -1,21 +1,31 @@
 <?php
 
-$ytKey = 'AIzaSyDyycQt_ifg9dDYOvhECfd8XvpXg60oVYI';
+$API_key = 'AIzaSyAGnvXLx0dyqNlWzLmbI9hPnPmu8uXn2vo';
 $channelId = 'UC779-tEQQ8FWG3aA5oTWYCA';
-
-// Calling the API
-$videos = file_get_contents('https://www.googleapis.com/youtube/v3/search?key='.$ytKey.'&channelId='.$channelId.'&part=snippet,id&order=date');
-
-'https://www.googleapis.com/youtube/v3/search?key='.$ytKey.'&channelId='.$channelId.'&part=snippet,id&order=date'
+$maxResults = 9;
 
 
-// if($video){
-//   // Stock data in variables
-//   $json = json_decode($video, true);
-//   $title = $json['items'][0]['snippet']['localized']['title'];
-//   $desc = $json['items'][0]['snippet']['localized']['description'];
-// }else{
-//   echo 'Error in calling API';
-// }
+$video_list = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$channelId.'&maxResults='.$maxResults.'&key='.$API_key.''));
 
-echo $videos;
+
+if($video_list){
+  // Stock data in variables
+  foreach($video_list->items as $item){
+    //Embed video
+    if(isset($item->id->videoId)){
+        
+			echo '
+				<div class="video-thumbnail active" id="'.$item->id->videoId.'">
+				  <img src="https://i.ytimg.com/vi/'.$item->id->videoId.'/mqdefault.jpg">
+				  <div class="video-title">'.$item->snippet->title.'</div>
+				</div>
+			';
+
+    }
+	}
+
+}else{
+  echo 'Error in calling API';
+}
+
+?>
