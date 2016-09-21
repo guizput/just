@@ -1,0 +1,38 @@
+section#contact{
+
+	background-color: $white;
+	left: 400%;
+
+	.social-links{
+
+		display: flex;
+		justify-content: space-around;
+		width: 200px;
+		margin: 0 auto;
+
+	}
+
+	img{
+
+		width: 50px;
+
+	}
+
+	.line-sep{
+
+		background-color: #A9A9A9;
+		margin: 20px auto 25px;
+
+	}
+
+	#email{
+
+		text-decoration: none;
+		color: $black; 
+		font:{
+			weight: 300;
+		}
+
+	}
+
+}

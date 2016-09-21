@@ -50,19 +50,31 @@ module.exports = function(grunt) {
         concat: {
             
           dist: {
-                 src: [
-                     'src/js/libs/*.js',
-                     'src/js/modules/*.js',
-                     'src/js/*.js'
-                 ],
-                 dest: 'htdocs/js/app.js',
+             src: [
+                 'src/js/libs/*.js',
+                 'src/js/modules/*.js',
+                 'src/js/*.js'
+             ],
+             dest: 'htdocs/js/app.js'
+          },
+          desktop: {
+            src: [
+                 'src/js/desktop/libs/*.js',
+                 'src/js/desktop/modules/*.js',
+                 'src/js/desktop/*.js'
+               ],
+               dest: 'htdocs/js/desktop/app.js'
           }
         },
 
         uglify: {
           build: {
-              src: 'htdocs/js/app.js',
-              dest: 'htdocs/js/app.min.js'
+            src: 'htdocs/js/app.js',
+            dest: 'htdocs/js/app.min.js'
+          },
+          desktop:{
+            src: 'htdocs/js/desktop/app.js',
+            dest: 'htdocs/js/desktop/app.min.js'
           }
         },
 
@@ -95,7 +107,7 @@ module.exports = function(grunt) {
               options: { livereload: true }
             },
             scripts: {
-              files: ['src/js/*.js', 'src/js/modules/*.js', 'src/js/libs/*.js'],
+              files: ['src/js/*.js', 'src/js/modules/*.js', 'src/js/libs/*.js','src/js/desktop/*.js', 'src/js/desktop/modules/*.js', 'src/js/desktop/libs/*.js'],
               tasks: ['concat', 'uglify'],
               options: {
                 spawn: false,
@@ -107,7 +119,8 @@ module.exports = function(grunt) {
                       'src/scss/base/*.scss', 
                       'src/scss/desktop/*.scss', 
                       'src/scss/mobile/*.scss',
-                      'src/scss/tablet/*.scss', 
+                      'src/scss/tablet/*.scss',
+                      'src/scss/desktop/base/*.scss',
                       'src/scss/desktop/sections/*.scss', 
                       'src/scss/mobile/sections/*.scss',
                       'src/scss/tablet/sections/*.scss' 
