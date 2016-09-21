@@ -13,5 +13,19 @@ $('.menu-item').click(function(e){
 
 	e.preventDefault();
 
+	if(id === '#dates'){
+
+		$('.dates ul li').each(function(i){
+
+			setTimeout(function(){
+
+				$('.dates ul li').eq(i).addClass('on');
+
+			}, 150 * (i+1));
+
+		});
+		
+	}
+
 });
 
