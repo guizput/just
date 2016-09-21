@@ -13,7 +13,8 @@ module.exports = function(grunt) {
             },
             files: {                         // Dictionary of files 
               'htdocs/css/desktop/style.css': 'src/scss/desktop.scss',
-              'htdocs/css/mobile/style.css': 'src/scss/mobile.scss'
+              'htdocs/css/mobile/style.css': 'src/scss/mobile.scss',
+              'htdocs/css/tablet/style.css': 'src/scss/tablet.scss'
             }
           }
         },
@@ -26,7 +27,8 @@ module.exports = function(grunt) {
           target: {
             files: {
               'htdocs/css/desktop/style.min.css': 'htdocs/css/desktop/style.css',
-              'htdocs/css/mobile/style.min.css': 'htdocs/css/mobile/style.css'
+              'htdocs/css/mobile/style.min.css': 'htdocs/css/mobile/style.css',
+              'htdocs/css/tablet/style.min.css': 'htdocs/css/tablet/style.css'
             }
           }
         },
@@ -38,7 +40,8 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'htdocs/css/desktop/style.css': 'htdocs/css/desktop/style.css',
-                    'htdocs/css/mobile/style.css': 'htdocs/css/mobile/style.css'
+                    'htdocs/css/mobile/style.css': 'htdocs/css/mobile/style.css',
+                    'htdocs/css/tablet/style.css': 'htdocs/css/tablet/style.css'
                 }
             }
 
@@ -73,7 +76,8 @@ module.exports = function(grunt) {
             },
             files: {
               'htdocs/desktop.html': 'src/pug/desktop/*.pug',
-              'htdocs/mobile.html': 'src/pug/mobile/*.pug'
+              'htdocs/mobile.html': 'src/pug/mobile/*.pug',
+              'htdocs/tablet.html': 'src/pug/tablet/*.pug'
             }
           }
         },
@@ -81,9 +85,11 @@ module.exports = function(grunt) {
         watch: {
             pug: {
               files: ['src/pug/desktop/*.pug', 
-                      'src/pug/mobile/*.pug', 
+                      'src/pug/mobile/*.pug',
+                      'src/pug/tablet/*.pug', 
                       'src/pug/desktop/modules/*.pug', 
-                      'src/pug/mobile/modules/*.pug'
+                      'src/pug/mobile/modules/*.pug',
+                      'src/pug/tablet/modules/*.pug'
                       ],
               tasks: ['pug'],
               options: { livereload: true }
@@ -100,9 +106,11 @@ module.exports = function(grunt) {
               files: ['src/scss/*.scss', 
                       'src/scss/base/*.scss', 
                       'src/scss/desktop/*.scss', 
-                      'src/scss/mobile/*.scss', 
+                      'src/scss/mobile/*.scss',
+                      'src/scss/tablet/*.scss', 
                       'src/scss/desktop/sections/*.scss', 
-                      'src/scss/mobile/sections/*.scss', 
+                      'src/scss/mobile/sections/*.scss',
+                      'src/scss/tablet/sections/*.scss' 
                       ],
               tasks: ['sass', 'autoprefixer'],
               options: {

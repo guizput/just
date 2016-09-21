@@ -48,7 +48,15 @@ $('.menu-item').click(function(){
 	var id = $(this).attr('href'),
 			section = $(id);
 
-	$('html, body').animate( { scrollTop: $(section).offset().top - 50}, 750);
+	if($('.tablet').length > 0){
+
+		$('html, body').animate( { scrollTop: $(section).offset().top - 100}, 750);
+
+	}else{	
+
+		$('html, body').animate( { scrollTop: $(section).offset().top - 50}, 750);
+
+	}	
 	
 	$('#menu').toggleClass('active');
 	$('.nav-toggle').toggleClass('open');
