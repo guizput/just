@@ -86,6 +86,18 @@ leftArrow.click(function(){
 		$('#'+active).removeClass('active');
 	}
 
+	if($('.video-thumbnail').first().hasClass('active')){
+
+		leftArrow.removeClass('on');
+		rightArrow.addClass('on');
+
+	}else{
+
+		leftArrow.addClass('on');
+		rightArrow.addClass('on');
+
+	}
+
 });
 
 rightArrow.click(function(){
@@ -96,6 +108,18 @@ rightArrow.click(function(){
 		$('.video-thumbnail.active').next().addClass('active');
 		var active = $('.video-thumbnail.active')[0].id;
 		$('#'+active).removeClass('active');
+	}
+
+	if($('.video-thumbnail').last().hasClass('active')){
+
+		rightArrow.removeClass('on');
+		leftArrow.addClass('on');
+
+	}else{
+
+		rightArrow.addClass('on');
+		leftArrow.addClass('on');
+
 	}
 
 });
