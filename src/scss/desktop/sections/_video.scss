@@ -1,8 +1,6 @@
 section#video{
 
-	background: url(../../img/video_bg-lg.jpg) no-repeat center center;
-	background-size: cover;
-	color: $white;
+	background-color: #e2e2e2;
 	left: 200%;
 	z-index: 30;
 
@@ -115,7 +113,7 @@ section#video{
 	
 	.pop-up{
 
-		background-color: $white;
+		background-color: rgba(0,0,0,0.95);
 		position: fixed;
 		top:0;
 		left:0;
@@ -155,7 +153,7 @@ section#video{
 			display: block;
 			width: 80px;
 			height: 2px;
-			background-color: $black;
+			background-color: $white;
 			position: relative;
 			transition: transform 0.3s ease-in-out;
 

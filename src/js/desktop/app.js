@@ -79,7 +79,7 @@ $('.menu-item').click(function(e){
 		$('.wouldyou').removeClass('on');
 
 		setTimeout(function(){
-			$('.wouldyou').css({'text-indent': '-2.2rem', 'animation': 'pulse 2s linear infinite', 'transform': 'scale(1)'}).html('...Would you let us <br>Play?').addClass('on');
+			$('.wouldyou').css({'text-indent': '-2.2rem', 'animation': 'pulse 2s linear infinite', 'transform': 'scale(1)'}).html('...Play me Again!').addClass('on');
 		}, 1000);
 
 	});
