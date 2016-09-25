@@ -7,6 +7,7 @@ section#dates{
 	left: 300%;
 	display: flex;
 	align-items: center;
+	z-index: 20;
 
 }
 
@@ -37,6 +38,13 @@ section#dates{
 
 	position: absolute;
 	bottom: -20px;
-	left:0;
+	left: -100%;
+	transition: all 1.5s ease-in-out;
+
+	&.on{
+
+		left: 0;
+
+	}
 
 }

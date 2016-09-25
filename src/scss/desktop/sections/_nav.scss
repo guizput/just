@@ -15,7 +15,7 @@ header{
 		height: 50px;
 		padding: 0 40px;
 		position: fixed;
-		z-index: 9999;
+		z-index: 990;
 		left: 50%;
 		bottom: 0;
 		transform: translate(-50%,0);
@@ -30,7 +30,7 @@ header{
 
 			li{
 
-				padding: 12px 10px;
+				padding: 10px 10px;
 				text-align: center;
 				cursor: pointer;
 				font: {
@@ -38,7 +38,8 @@ header{
 					weight: 300;
 				}	
 				float: left;
-				transition: opacity 0.3s ease-in-out;
+				border-top: 2px solid transparent;
+				transition: border-top 0.3s ease-in-out;
 
 				&.active{
 					
