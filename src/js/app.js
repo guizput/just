@@ -193,4 +193,28 @@ document.addEventListener('touchmove', appearing);
 document.addEventListener('scroll', appearing);
 
 
+// Interacting with SoundCloud player
+
+var iframeElement   = document.querySelector('iframe'),
+		widget1         = SC.Widget(iframeElement);
+
+widget1.bind(SC.Widget.Events.PLAY, function(){
+
+	$('.wouldyou').removeClass('on');
+
+	setTimeout(function(){
+		$('.wouldyou').css({'text-indent': '0', 'animation': 'none', 'transform': 'scale(1.3)'}).html('Turn the<br>volume up!').addClass('on');
+	}, 1000);
+
+});
+
+widget1.bind(SC.Widget.Events.PAUSE, function(){
+
+	$('.wouldyou').removeClass('on');
+
+	setTimeout(function(){
+		$('.wouldyou').css({'text-indent': '-2.2rem', 'animation': 'pulse 2s linear infinite', 'transform': 'scale(1)'}).html('...Play me Again!').addClass('on');
+	}, 1000);
+
+});
 
