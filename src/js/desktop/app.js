@@ -13,6 +13,8 @@ $('.menu-item').click(function(e){
 
 	e.preventDefault();
 
+	// DO stuff depending on section
+
 	if(id === '#dates'){
 
 		$('.speaker').addClass('on');
@@ -56,33 +58,33 @@ $('.menu-item').click(function(e){
 		}
 
 		setTimeout(showVideos, 300);
-
-		
-		
+	
 	}
 
-	var iframeElement   = document.querySelector('iframe');
-	var widget1         = SC.Widget(iframeElement);
+});
 
-	widget1.bind(SC.Widget.Events.PLAY, function(){
+// SoundCloud handlers
 
-		$('.wouldyou').removeClass('on');
+var iframeElement   = document.querySelector('iframe');
+var widget1         = SC.Widget(iframeElement);
 
-		setTimeout(function(){
-			$('.wouldyou').css({'text-indent': '0', 'animation': 'none', 'transform': 'scale(1.3)'}).html('Turn the<br>volume up!').addClass('on');
-		}, 1000);
+widget1.bind(SC.Widget.Events.PLAY, function(){
 
-	});
+	$('.wouldyou').removeClass('on');
 
-	widget1.bind(SC.Widget.Events.PAUSE, function(){
+	setTimeout(function(){
+		$('.wouldyou').css({'text-indent': '0', 'animation': 'none', 'transform': 'scale(1.3)'}).html('Turn the<br>volume up!').addClass('on');
+	}, 1000);
 
-		$('.wouldyou').removeClass('on');
+});
 
-		setTimeout(function(){
-			$('.wouldyou').css({'text-indent': '-2.2rem', 'animation': 'pulse 2s linear infinite', 'transform': 'scale(1)'}).html('...Play me Again!').addClass('on');
-		}, 1000);
+widget1.bind(SC.Widget.Events.PAUSE, function(){
 
-	});
+	$('.wouldyou').removeClass('on');
+
+	setTimeout(function(){
+		$('.wouldyou').css({'text-indent': '-2.2rem', 'animation': 'pulse 2s linear infinite', 'transform': 'scale(1)'}).html('...Play me Again!').addClass('on');
+	}, 1000);
 
 });
 
