@@ -76,22 +76,59 @@
 	.music-text{
 	
 		min-width: 395px;
+		position: relative;
 
 	}
 
 	.wouldyou{
 		
-		font-size: 2.6rem;
-		line-height: 3.2rem;
+		font-size: 5rem;
+		font-family: 'Amatic SC', cursive;
+		line-height: 6rem;
 		text-align: left;
-		text-indent: -2.2rem;
 		opacity: 0;
-		transition: opacity 0.5s ease-in-out;
-		animation: pulse 2s linear infinite;
+		position: relative;
+		transition: opacity 0.2s ease-in-out;
+		backface-visibility: hidden;
 
 		&.on{
 
 			opacity: 1;
+
+		}
+
+		&:before{
+
+			content: '';
+	    width: 200px;
+	    height: 100px;
+	    background: url(../../img/arrow.png) left top no-repeat;
+	    background-size: 100%;
+	    display: inline-block;
+	    animation: shakeHorizontal 2s linear infinite;
+	    position: absolute;
+	    right: 110%;
+	    z-index: 900;
+
+	    @media screen and (max-width: 1200px){
+
+	    	right: 100%;
+
+	    }
+
+		}
+
+		&.vert{
+
+			&:before{
+
+		    width: 100px;
+		    height: 200px;
+				background: url(../../img/arrow-vert.png) left top no-repeat;
+				background-size: 100%;
+				animation: shakeVertical 2s linear infinite;
+
+			}
 
 		}
 

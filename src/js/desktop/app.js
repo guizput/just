@@ -69,8 +69,8 @@ $('.menu-item').click(function(e){
 		$('.wouldyou').removeClass('on');
 
 		setTimeout(function(){
-			$('.wouldyou').css({'text-indent': '0', 'animation': 'none', 'transform': 'scale(1.3)'}).html('Turn the<br>volume up!').addClass('on');
-		}, 1000);
+			$('.wouldyou').html('Turn the<br>volume up!').addClass('on vert');
+		}, 300);
 
 	});
 
@@ -79,8 +79,8 @@ $('.menu-item').click(function(e){
 		$('.wouldyou').removeClass('on');
 
 		setTimeout(function(){
-			$('.wouldyou').css({'text-indent': '-2.2rem', 'animation': 'pulse 2s linear infinite', 'transform': 'scale(1)'}).html('...Play me Again!').addClass('on');
-		}, 1000);
+			$('.wouldyou').html('Play me Again!').addClass('on').removeClass('vert');
+		}, 300);
 
 	});
 
