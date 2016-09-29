@@ -76,28 +76,57 @@ $('.menu-item').click(function(e){
 		
 	}
 
-	var iframeElement   = document.querySelector('iframe');
-	var widget1         = SC.Widget(iframeElement);
+});
 
-	widget1.bind(SC.Widget.Events.PLAY, function(){
 
-		$('.wouldyou').removeClass('on');
+// Souncloud handlers
+
+var iframeElement   = document.querySelector('iframe'),
+		widget1         = SC.Widget(iframeElement),
+		isLoaded				= false;
+
+function showSoundCloud(){
+
+	if($('section.active').attr('id') === 'music'){
+
+		$('.headphones').addClass('on');
+		$('.soundcloud iframe').addClass('on');
 
 		setTimeout(function(){
-			$('.wouldyou').html('Turn the<br>volume up!').addClass('on vert');
-		}, 300);
 
-	});
+			$('.soundcloud .cta').addClass('on');
+			$('.wouldyou').addClass('on');
 
-	widget1.bind(SC.Widget.Events.PAUSE, function(){
+		}, 1500);
 
-		$('.wouldyou').removeClass('on');
+	}
 
-		setTimeout(function(){
-			$('.wouldyou').html('Play me Again!').addClass('on').removeClass('vert');
-		}, 300);
+}
 
-	});
+function soundCloudLoaded(){
+
+	isLoaded = true;
+	showSoundCloud();
+
+}		
+
+widget1.bind(SC.Widget.Events.PLAY, function(){
+
+	$('.wouldyou').removeClass('on');
+
+	setTimeout(function(){
+		$('.wouldyou').html('Turn the<br>volume up!').addClass('on vert');
+	}, 300);
+
+});
+
+widget1.bind(SC.Widget.Events.PAUSE, function(){
+
+	$('.wouldyou').removeClass('on');
+
+	setTimeout(function(){
+		$('.wouldyou').html('Play me Again!').addClass('on').removeClass('vert');
+	}, 300);
 
 });
 
