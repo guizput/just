@@ -1,15 +1,37 @@
 // Intro
 
-$('section').not('#intro').css({'width': 0, 'height': 0, 'overflow': 'hidden'});
+var vid = document.getElementById("intro-video");
 
-$('#intro').click(function(){
+vid.onloadeddata = function() {
+  setTimeout(function(){
+		$('#skip').addClass('on');
+	},8000);
+};
 
-	$(this).fadeOut(1000);
-	$('section').not('#intro').css({'width': '100%', 'height': '100%', 'overflow': 'auto'});
+var sections = $('section').not('#intro'),
+		introSection = $('#intro');
+
+function hideIntro(){
+
+	$('#intro-video').animate({volume: 0}, 2000).addClass('out');
+	$('#intro').addClass('out');
+	$('#about').addClass('on');
+	$('.content').addClass('on');
 
 	setTimeout(function(){
-		$('#intro').remove();
-	},1000);
+		introSection.remove();
+	},2000);
+
+}
+
+// Hide intro at the end of video
+vid.addEventListener('ended',hideIntro,false);
+
+// Hide intro on click
+$('#skip').click(function(e){
+
+	hideIntro();
+	e.preventDefault();
 
 });
 
@@ -17,7 +39,7 @@ $('#intro').click(function(){
 
 $('.menu-item').click(function(e){
 
-	var id = $(this).attr('href'),
+	var id = $(this).attr('data-id'),
 			section = $(id),
 			listItems = $('.menu-item').parent();
 
@@ -72,8 +94,6 @@ $('.menu-item').click(function(e){
 
 		setTimeout(showVideos, 300);
 
-		
-		
 	}
 
 });

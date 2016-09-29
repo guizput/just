@@ -1,12 +1,19 @@
 #about{
 	
 	background: url(../../img/hero-lg.jpg) no-repeat center center;
-	background-size: cover;
+	background-size: 80%;
 	display: flex;
 	align-items: center;
 	left: 0;
 	color: $white;
 	z-index: 50;
+	transition: all 2s ease-in-out;
+
+	&.on{
+
+		background-size: 100%;
+
+	}
 
 	.overlay{
 
@@ -23,7 +30,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    opacity: 0;
     transform: translate(-50%,-50%);
+    transition: opacity 3s ease-in-out;
+
+    &.on{
+
+	    opacity: 1;
+
+    }
 
 	}
 
