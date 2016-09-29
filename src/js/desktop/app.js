@@ -1,3 +1,18 @@
+// Intro
+
+$('section').not('#intro').css({'width': 0, 'height': 0, 'overflow': 'hidden'});
+
+$('#intro').click(function(){
+
+	$(this).fadeOut(1000);
+	$('section').not('#intro').css({'width': '100%', 'height': '100%', 'overflow': 'auto'});
+
+	setTimeout(function(){
+		$('#intro').remove();
+	},1000);
+
+});
+
 // Scroll to section when click on menu
 
 $('.menu-item').click(function(e){
@@ -7,11 +22,9 @@ $('.menu-item').click(function(e){
 			listItems = $('.menu-item').parent();
 
 	listItems.removeClass('active');
-	$(this).parent().addClass('active');	
+	$(this).parent().addClass('active');		
 
-	$('section').removeClass('active');
 	$('html, body').animate( { scrollLeft: $(section).offset().left}, 750);
-	$(section).addClass('active');
 
 	e.preventDefault();
 
@@ -31,19 +44,15 @@ $('.menu-item').click(function(e){
 		
 	}else if(id === '#music'){
 
-		if(isLoaded === true){
+		$('.headphones').addClass('on');
+		$('.soundcloud iframe').addClass('on');
 
-			$('.headphones').addClass('on');
-			$('.soundcloud iframe').addClass('on');
+		setTimeout(function(){
 
-			setTimeout(function(){
+			$('.soundcloud .cta').addClass('on');
+			$('.wouldyou').addClass('on');
 
-				$('.soundcloud .cta').addClass('on');
-				$('.wouldyou').addClass('on');
-
-			}, 1500);
-
-		}
+		}, 1500);
 		
 	}else if(id === '#video'){
 
@@ -62,59 +71,33 @@ $('.menu-item').click(function(e){
 		}
 
 		setTimeout(showVideos, 300);
+
+		
 		
 	}
 
-});
+	var iframeElement   = document.querySelector('iframe');
+	var widget1         = SC.Widget(iframeElement);
 
-// Souncloud handlers
+	widget1.bind(SC.Widget.Events.PLAY, function(){
 
-var iframeElement   = document.querySelector('iframe'),
-		widget1         = SC.Widget(iframeElement),
-		isLoaded				= false;
-
-function showSoundCloud(){
-
-	if($('section.active').attr('id') === 'music'){
-
-		$('.headphones').addClass('on');
-		$('.soundcloud iframe').addClass('on');
+		$('.wouldyou').removeClass('on');
 
 		setTimeout(function(){
+			$('.wouldyou').html('Turn the<br>volume up!').addClass('on vert');
+		}, 300);
 
-			$('.soundcloud .cta').addClass('on');
-			$('.wouldyou').addClass('on');
+	});
 
-		}, 1500);
+	widget1.bind(SC.Widget.Events.PAUSE, function(){
 
-	}
+		$('.wouldyou').removeClass('on');
 
-}
+		setTimeout(function(){
+			$('.wouldyou').html('Play me Again!').addClass('on').removeClass('vert');
+		}, 300);
 
-function soundCloudLoaded(){
-
-	isLoaded = true;
-	showSoundCloud();
-
-}		
-
-widget1.bind(SC.Widget.Events.PLAY, function(){
-
-	$('.wouldyou').removeClass('on');
-
-	setTimeout(function(){
-		$('.wouldyou').html('Turn the<br>volume up!').addClass('on vert');
-	}, 300);
-
-});
-
-widget1.bind(SC.Widget.Events.PAUSE, function(){
-
-	$('.wouldyou').removeClass('on');
-
-	setTimeout(function(){
-		$('.wouldyou').html('Play me Again!').addClass('on').removeClass('vert');
-	}, 300);
+	});
 
 });
 
