@@ -1,3 +1,18 @@
+// Intro
+
+$('section').not('#intro').css({'width': 0, 'height': 0, 'overflow': 'hidden'});
+
+$('#intro').click(function(){
+
+	$(this).fadeOut(1000);
+	$('section').not('#intro').css({'width': '100%', 'height': '100%', 'overflow': 'auto'});
+
+	setTimeout(function(){
+		$('#intro').remove();
+	},1000);
+
+});
+
 // Scroll to section when click on menu
 
 $('.menu-item').click(function(e){
