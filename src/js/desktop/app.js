@@ -11,11 +11,15 @@ vid.onloadeddata = function() {
 var sections = $('section').not('#intro'),
 		introSection = $('#intro');
 
+// Hide sections when page loads
+sections.css('width', 0);
+
 function hideIntro(){
 
 	$('#intro-video').animate({volume: 0}, 2000).addClass('out');
+	sections.css('width', '100%');
 	$('#intro').addClass('out');
-	$('#about').addClass('on');
+	$('.overlay').addClass('on');
 	$('.content').addClass('on');
 
 	setTimeout(function(){
@@ -98,6 +102,11 @@ $('.menu-item').click(function(e){
 
 });
 
+$('#logo').click(function(){
+
+	location.reload();
+
+});
 
 // Souncloud handlers
 
