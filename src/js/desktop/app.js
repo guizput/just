@@ -1,10 +1,11 @@
 // Intro
 
-var vid = document.getElementById("intro-video");
+var vid = document.getElementById("intro-video"),
+		skip = $('#skip');
 
 vid.onloadeddata = function() {
   setTimeout(function(){
-		$('#skip').addClass('on');
+		skip.addClass('on');
 	},8000);
 };
 
@@ -32,7 +33,7 @@ function hideIntro(){
 vid.addEventListener('ended',hideIntro,false);
 
 // Hide intro on click
-$('#skip').click(function(e){
+skip.click(function(e){
 
 	hideIntro();
 	e.preventDefault();
@@ -165,17 +166,20 @@ var thumbnails = $('.video-thumbnail');
 
 thumbnails.click(function(){
 
-	var id = $(this).attr('id');
+	var id = $(this).attr('id'),
+			menu = $('#menu');
 
 	$('#video').append('<div class="pop-up"><div class="close"><span></span></div><div class="video-player"><div class="spinner"></div><iframe width="100%" height="360" src="https://www.youtube.com/embed/'+id+'?rel=0" frameborder="0" allowfullscreen></iframe></div></div>');
 
 	setTimeout(function(){
 		$('section#video .pop-up').addClass('on');
+		menu.addClass('out');
 	}, 100);
 
 	$('.pop-up').click(function(){
 
 		$(this).removeClass('on');
+		menu.removeClass('out');
 		setTimeout(function(){
 			$('.pop-up').remove();
 		}, 800);
