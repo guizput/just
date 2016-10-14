@@ -21,7 +21,6 @@ function hideIntro(){
 	sections.css('width', '100%');
 	$('#intro').addClass('out');
 	$('.overlay').addClass('on');
-	$('.content').addClass('on');
 
 	setTimeout(function(){
 		introSection.remove();
@@ -46,7 +45,10 @@ $('.menu-item').click(function(e){
 
 	var id = $(this).attr('data-id'),
 			section = $(id),
-			listItems = $('.menu-item').parent();
+			listItems = $('.menu-item').parent(),
+			speaker = $('.speaker'),
+			phone = $('.phone'),
+			dates = $('.dates ul li');
 
 	listItems.removeClass('active');
 	$(this).parent().addClass('active');		
@@ -55,21 +57,7 @@ $('.menu-item').click(function(e){
 
 	e.preventDefault();
 
-	if(id === '#dates'){
-
-		$('.speaker').addClass('on');
-
-		$('.dates ul li').each(function(i){
-
-			setTimeout(function(){
-
-				$('.dates ul li').eq(i).addClass('on');
-
-			}, 150 * (i+1));
-
-		});
-		
-	}else if(id === '#music'){
+	if(id === '#music'){
 
 		$('.headphones').addClass('on');
 		$('.soundcloud iframe').addClass('on');
@@ -98,6 +86,40 @@ $('.menu-item').click(function(e){
 		}
 
 		setTimeout(showVideos, 300);
+
+	}else if(id === '#dates'){
+
+		speaker.addClass('on');
+		phone.removeClass('on');
+
+		dates.each(function(i){
+
+			setTimeout(function(){
+
+				dates.eq(i).addClass('on');
+
+			}, 150 * (i+1));
+
+		});
+		
+	}else if(id === '#contact'){
+
+		// Hide dates content
+		speaker.removeClass('on');
+		phone.addClass('on');
+
+		dates.each(function(i){
+
+			setTimeout(function(){
+
+				dates.eq(i).removeClass('on');
+
+			}, 150 * (i+1));
+
+		});
+
+		// Show contact content
+
 
 	}
 
