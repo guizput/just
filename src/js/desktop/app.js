@@ -47,8 +47,11 @@ $('.menu-item').click(function(e){
 			section = $(id),
 			listItems = $('.menu-item').parent(),
 			speaker = $('.speaker'),
+			contact = $('#contact'),
 			phone = $('.phone'),
-			dates = $('.dates ul li');
+			dates = $('.dates ul li'),
+			square = $('.square'),
+			icons = $('.icon');
 
 	listItems.removeClass('active');
 	$(this).parent().addClass('active');		
@@ -91,6 +94,8 @@ $('.menu-item').click(function(e){
 
 		speaker.addClass('on');
 		phone.removeClass('on');
+		square.removeClass('on');
+		icons.removeClass('on');
 
 		dates.each(function(i){
 
@@ -101,8 +106,16 @@ $('.menu-item').click(function(e){
 			}, 150 * (i+1));
 
 		});
+
+		setTimeout(function(){
+
+			contact.css('z-index', '10');
+			
+		},1500);
 		
 	}else if(id === '#contact'){
+
+		contact.css('z-index', '20');
 
 		// Hide dates content
 		speaker.removeClass('on');
@@ -119,7 +132,10 @@ $('.menu-item').click(function(e){
 		});
 
 		// Show contact content
-
+		setTimeout(function(){
+			square.addClass('on');
+			icons.addClass('on');
+		},1500);
 
 	}
 

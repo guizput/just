@@ -1,7 +1,78 @@
 section#contact{
 
 	left: 300%;
-	z-index: 20;
+	z-index: 10;
+
+	.square{
+
+		position: absolute;
+		height: 0;
+		width: 0;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		transition: all 0.8s ease-in-out; 
+
+		&.on{
+
+			height: 400px;
+			width: 680px;
+
+			@media screen and (max-width: 1300px){
+				width: 400px;
+				height: 400px;
+			}
+
+		}
+
+
+		&:before,
+		&:after{
+
+			display: block;
+			content: '';
+			height: 2px;
+			width: 100%;
+			background-color: $white;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+
+		}
+
+		&:after{
+
+			transform: rotate(90deg);
+
+		}
+
+		.row{
+
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			position: relative;
+    	bottom: 25px;
+    	height: 50%;
+
+		}
+
+		.icon{
+
+			color: $white;
+			font-size: 100px;
+			opacity: 0;
+			transition: opacity 0.8s ease-in-out;
+
+			&.on{
+
+				opacity: 1;
+
+			}
+
+		}
+
+	}
 
 	.phone{
 
