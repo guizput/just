@@ -145,21 +145,9 @@ thumbnails.click(function(){
 function appearing(){
 
 	var wScroll = $(window).scrollTop(),
-			musicians = $('.musicians'),
-			dates = $('.dates');
+			musicians = $('.musicians');
 
 	if (wScroll > (musicians.offset().top - 300) && $('.trio.on').length < 3){
-
-		$('.trio').each(function(i){
-
-			setTimeout(function(){
-
-				$('.trio').eq(i).addClass('on');
-
-			}, 150 * (i+1));
-
-		});
-
 
 		setTimeout(function(){
 
@@ -170,20 +158,6 @@ function appearing(){
 			}
 
 		}, 500);
-
-	}
-
-	if (wScroll > (dates.offset().top - 300) && $('.dates ul li on').length === 0){
-
-		$('.dates ul li').each(function(i){
-
-			setTimeout(function(){
-
-				$('.dates ul li').eq(i).addClass('on');
-
-			}, 150 * (i+1));
-
-		});
 
 	}
 	
