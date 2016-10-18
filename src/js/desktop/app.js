@@ -134,7 +134,9 @@ $('.menu-item').click(function(e){
 		// Show contact content
 		setTimeout(function(){
 			square.addClass('on');
-			icons.addClass('on');
+			setTimeout(function(){
+				icons.addClass('on');
+			},800);
 		},1500);
 
 	}

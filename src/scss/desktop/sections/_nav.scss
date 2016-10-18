@@ -6,6 +6,7 @@ header{
 		margin-right: 20px;
 		position: relative;
 		cursor: pointer;
+		top: 2px;
 
 	}
 
@@ -37,7 +38,7 @@ header{
 
 			li{
 
-				padding: 10px 10px;
+				padding: 8px 10px;
 				text-align: center;
 				cursor: pointer;
 				font: {
@@ -51,7 +52,6 @@ header{
 
 				&.active{
 					
-					padding: 10px 10px;
 					border-top: 2px solid $soundcloud;
 					opacity: 1;
 
