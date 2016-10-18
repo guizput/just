@@ -73,6 +73,8 @@ var leftArrow = $('#left-arrow'),
 		thumbnails = $('.video-thumbnail'),
 		thumbHeight = thumbnails[0].clientHeight;
 
+thumbnails.eq(0).addClass('active');	
+
 $('#video-slider').height(thumbHeight);
 
 

@@ -3,6 +3,9 @@
 require_once 'php/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 
+// Including Youtube Credentials
+include('php/credentials.php');
+
 // Any mobile device (phones or tablets).
 if ( $detect->isMobile() ) {
 	include('templates/mobile.php');
