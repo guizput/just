@@ -3,7 +3,7 @@
 ini_set('display_errors',1);
 error_reporting(-1);
 
-include $_SERVER["DOCUMENT_ROOT"] . '/test-mobile/youtube/credentials.php';
+include 'php/credentials.php';
 
 $video_list = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId='.$playlistId.'&maxResults='.$maxResults.'&key='.$API_key));
 
@@ -17,9 +17,9 @@ if($video_list){
         
 			echo '
 				<div class="video-thumbnail active" id="'.$item->snippet->resourceId->videoId.'">
-				  <img src="https://i.ytimg.com/vi/'.$item->snippet->resourceId->videoId.'/mqdefault.jpg">
-				  <div class="video-title">'.$item->snippet->title.'</div>
-				</div>
+          <div class="overlay"><img src="img/play.svg"></div><img src="https://i.ytimg.com/vi/'.$item->snippet->resourceId->videoId.'/mqdefault.jpg">
+          <div class="video-title">'.$item->snippet->title.'</div>
+        </div>
 			';
 
     }
