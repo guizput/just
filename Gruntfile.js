@@ -87,9 +87,9 @@ module.exports = function(grunt) {
               pretty: true
             },
             files: {
-              'htdocs/desktop.html': 'src/pug/desktop/*.pug',
-              'htdocs/mobile.html': 'src/pug/mobile/*.pug',
-              'htdocs/tablet.html': 'src/pug/tablet/*.pug'
+              'htdocs/templates/desktop.html': 'src/pug/desktop/*.pug',
+              'htdocs/templates/mobile.html': 'src/pug/mobile/*.pug',
+              'htdocs/templates/tablet.html': 'src/pug/tablet/*.pug'
             }
           }
         },
