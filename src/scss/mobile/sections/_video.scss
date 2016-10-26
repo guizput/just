@@ -1,0 +1,204 @@
+#video{
+
+	background: url(../../img/video_bg-md.jpg) no-repeat center center;
+	background-size: cover;
+	color: $white;
+
+	.video-thumbnail{
+
+		position: absolute;
+		margin: 0 0 25px 0;
+		width: 100%;
+		padding: 0 0 -2px 0;
+		overflow: hidden;
+		transform: translate3d(-100%,0,0);
+		transition: all 0.3s ease-in-out;
+
+		&.active{
+
+			transform: translate3d(0,0,0);
+
+		}
+
+		.overlay{
+
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0,0,0,0.3);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img{
+
+				width: 50px;
+				z-index: 3;
+
+			}
+
+		}
+
+		.video-title{
+
+			position: absolute;
+			font:{
+				size: 0.6rem;
+			}
+			max-height: 26px;
+			overflow: hidden;
+			bottom: 30%;
+			left: 0;
+			transform: translate(0, 30%);
+			background-color: $white;
+			color: $black;
+			padding: 10px 10px 10px 25px;
+			text-align: left;
+			opacity: 0.8;
+
+		}
+
+		img{
+
+			width: 100%;
+
+		}
+
+	}
+
+	.youtube-helper{
+		
+		position: relative;
+		display: flex;		
+		align-items: center;
+		justify-content: space-around;
+		margin: 25px 0 25px 0;
+
+		img{
+
+			width: 20px;
+			opacity: 0;
+			transition: all 0.3s ease-in-out;
+
+			&.on{
+
+				opacity: 1;
+
+			}
+
+		}
+
+		p{
+
+			width: 200px;
+			margin: 0;
+
+		}
+
+	}
+
+	.cta{
+
+		color: $youtube;
+		background-color: $white;
+
+	}
+	
+	.pop-up{
+
+		background-color: $white;
+		position: fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		display: flex;
+		align-items: center;
+		z-index: 999;
+
+	}
+
+	.close{
+
+		position: absolute;
+		top: 50px;
+		right: 25px;
+
+		span,
+		span:before,
+		span:after {
+
+			content: '';
+			display: block;
+			width: 40px;
+			height: 2px;
+			background-color: $black;
+			position: relative;
+			transition: transform 0.3s ease-in-out;
+
+		}
+
+		span{
+
+			background: transparent;
+
+		}
+
+		span:before{
+
+			transform-orgin: center;
+			transform: rotate(45deg);
+			top: 0;
+
+		}
+
+		span:after{
+
+			transform-orgin: center;
+			transform: rotate(-45deg);
+			top: -2px;
+
+		}
+
+	}
+
+	.video-player{
+
+		width: 100%;
+		height: 0;
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		position: relative;
+
+		.spinner{
+
+			top:50%;
+			left:50%;
+			background-color: #eee;
+			transform: translate3d(-50%,-50%,0);
+
+			&:after{
+
+				border-left-color: $youtube;
+				border-right-color: $youtube;
+
+			}
+
+		}
+
+		iframe{
+
+			width: 100% !important;
+			height: 100% !important;
+			position: absolute;
+			top:0;
+			left:0;
+			z-index: 2;
+
+		}
+
+	}
+
+}

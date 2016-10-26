@@ -74,4 +74,11 @@ jspm_packages
 .sass-cache/
 
 # htdocs
+<<<<<<< HEAD
 htdocs/
+=======
+htdocs/
+
+#Ignoring Youtube Credentials
+youtube/
+>>>>>>> stage

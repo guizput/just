@@ -1,1 +1,0 @@
-Salut à tous, voici un e-mail envoyé par un script PHP.

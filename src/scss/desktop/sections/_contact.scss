@@ -1,0 +1,112 @@
+section#contact{
+
+	left: 300%;
+	z-index: 10;
+
+	.square{
+
+		position: absolute;
+		z-index: 12;
+		height: 0;
+		width: 0;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		transition: all 0.8s ease-in-out;
+		backface-visibility: hidden;
+
+		&.on{
+
+			height: 300px;
+			width: 500px;
+
+			@media screen and (max-width: 1300px){
+				width: 400px;
+				height: 300px;
+			}
+
+		}
+
+
+		&:before,
+		&:after{
+
+			display: block;
+			content: '';
+			height: 2px;
+			width: 100%;
+			background-color: $white;
+			position: absolute;
+			top: 50%;
+			opacity: 0.6;
+			transform: translateY(-50%);
+
+		}
+
+		&:after{
+
+			transform: rotate(90deg);
+
+		}
+
+		.row{
+
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			position: relative;
+    	bottom: 25px;
+    	height: 55%;
+
+		}
+
+		a{
+
+			color: $white;
+			text-decoration: none;
+
+		}
+
+		.icon{
+
+			color: $white;
+			opacity: 0;
+			font-size: 3rem;
+			font-family: 'Amatic SC', cursive;
+			line-height: 4rem;
+			text-align: center;
+			transition: opacity 0.8s ease-in-out;
+
+			&.on{
+
+				opacity: 0.6;
+
+				&:hover{
+
+					opacity: 1;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.phone{
+
+		position: absolute;
+		bottom: -8px;
+		right: -100%;
+		z-index: 10;
+		transition: all 1.5s ease-in-out;
+
+		&.on{
+
+			right: 0;
+
+		}
+
+	}
+
+}
