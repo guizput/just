@@ -3,7 +3,7 @@
 ini_set('display_errors',1);
 error_reporting(-1);
 
-$video_list = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId='.$playlistId.'&maxResults='.$maxResults.'&key='.$API_key));
+$video_list = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId='.$playlistId.'&maxResults='.$maxResults.'&key='.$API_key.'&order=date'));
 
 // https://www.youtube.com/playlist?list=PL8T_kI1HrvoHE7QpyMKfWLd5_B15SYw6c
 
