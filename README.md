@@ -1,6 +1,7 @@
 #just.
 
 This is my rock band web site. The idea is to use this landing page as a store front for the band.
+Live site: [www.just-band.com](https://github.com/serbanghita/Mobile-Detect)
 
 ###FOR THIS PROJECT
 
