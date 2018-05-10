@@ -22,24 +22,16 @@ $hero__bkg__img-lg: '../img/hero-lg.jpg';
   }
   @include breakpoint ('screen-sm') {
     height: 500px;
-    height: 50vh;
+    height: 60vh;
+  }
+  @include breakpoint ('screen-md') {
+    height: 500px;
+    height: 70vh;
   }
   @include breakpoint ('screen-lg') {
     height: 600px;
     height: 80vh;
   }
-  // &:after {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   z-index: 1;
-  //   display: block;
-  //   width: 100%;
-  //   height: 100%;
-  //   background-color: $black;
-  //   content: '';
-  //   opacity: 0.1;
-  // }
   &__play {
     position: absolute;
     top: 50%;

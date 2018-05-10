@@ -1,0 +1,17 @@
+.app__header {
+  height: 50px;
+  text-align: center;
+  line-height: 60px;
+  @include breakpoint ('screen-sm') {
+    height: 80px;
+    line-height: 110px;
+  }
+  svg {
+    display: inline-block;
+    width: auto;
+    height: 20px;
+    @include breakpoint ('screen-sm') {
+      height: 40px;
+    }
+  }
+}
