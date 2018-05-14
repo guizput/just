@@ -7,7 +7,7 @@ $intro__text: #121212;
   padding: 1rem 0 4em 0;
   background-color: $intro__bkg;
   text-align: center;
-  @include breakpoint ('screen-sm') {
+  @include breakpoint ('screen-xs') {
     padding: 4rem 0;
   }
 }
