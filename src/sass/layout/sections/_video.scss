@@ -7,7 +7,11 @@
     @include make-xs-column(12, 0);
     @include make-sm-column(4, 0);
     iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
     }
     &__copy {
       padding: 0.5rem 1rem;
@@ -17,27 +21,10 @@
       }
     }
   }
-  a.app__cta {
+  &__container {
     position: relative;
-    display: inline-block;
-    overflow: hidden;
-    margin-top: 2rem;
-    margin-right: 1em;
-    padding: 0.75em 1.875em;
-    outline: 0;
-    border: 1px solid $white;
-    background-color: transparent;
-    color: $white;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 400;
-    font-size: 0.6em;
-    transition: all 0.2s;
-
-    &:hover {
-      background-color: $white;
-      color: $black;
-    }
+    padding-bottom: 56.25%;
+    width: 100%;
+    height: 0;
   }
 }
