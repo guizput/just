@@ -28,6 +28,16 @@ $hero__bkg__img-lg: '../img/hero-lg.jpg';
     height: 500px;
     height: 70vh;
   }
+  &__logo {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    display: none;
+    width: 150px;
+    @include breakpoint ('screen-sm') {
+      display: block;
+    }
+  }
   &__play {
     position: absolute;
     top: 50%;
