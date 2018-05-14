@@ -30,12 +30,13 @@ $hero__bkg__img-lg: '../img/hero-lg.jpg';
   }
   &__logo {
     position: absolute;
-    right: 2rem;
-    bottom: 2rem;
-    display: none;
-    width: 150px;
+    top: 1rem;
+    left: 1rem;
+    width: 80px;
     @include breakpoint ('screen-sm') {
-      display: block;
+      right: 2rem;
+      bottom: 2rem;
+      width: 150px;
     }
   }
   &__play {

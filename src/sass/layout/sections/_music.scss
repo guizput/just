@@ -1,13 +1,16 @@
 // COLORS
 $app__music__bkg: #FF5500;
 $app__music__text: #FFFFFF;
-$app__music__bkg__img: '../img/music_bg-lg.jpg';
+$app__music__bkg__img--lg: '../img/music_bg-lg.jpg';
+$app__music__bkg__img--md: '../img/music_bg-md.jpg';
 
 .app__music {
   padding: 4em 0;
-  background: url($app__music__bkg__img) center center no-repeat;
   background-color: $app__music__bkg;
-  background-size: cover;
+  @include breakpoint ('screen-sm') {
+    background: url($app__music__bkg__img--lg) center center no-repeat;
+    background-size: cover;
+  }
 
   &__container {
     @include container(940px);
