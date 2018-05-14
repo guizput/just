@@ -1,0 +1,29 @@
+$app__dates__img: '../img/dates.jpg';
+
+.app__dates {
+  @include container(100%, 0);
+  @include breakpoint ('screen-md') {
+    display: flex;
+  }
+
+  &__copy {
+    padding: 4em 0;
+    text-align: center;
+    @include make-xs-column(12);
+    @include make-md-column(6);
+    @include breakpoint ('screen-md') {
+      padding: 4em;
+      text-align: left;
+    }
+  }
+  &__lifestyle {
+    height: 300px;
+    background: url($app__dates__img) center center no-repeat;
+    background-size: cover;
+    @include make-xs-column(12, 0);
+    @include make-md-column(6, 0);
+    @include breakpoint ('screen-md') {
+      height: auto;
+    }
+  }
+}
