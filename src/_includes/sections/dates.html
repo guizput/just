@@ -1,0 +1,9 @@
+<section class="app__dates">
+    <div class="app__dates__copy">
+      <h2>dates.</h2>
+      {% for date in page.dates %}
+        <p><strong>{{ date.name }}</strong> – {{ date.info }}</p>
+      {% endfor %}
+    </div>
+    <div class="app__dates__lifestyle"></div>
+</section>

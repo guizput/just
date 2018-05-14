@@ -1,18 +1,5 @@
-#just.
+# Running Grunt
 
-This is my rock band web site. The idea is to use this landing page as a store front for the band.
+For local development, run `grunt ws` to build the site and generate a preview with Browsersync at localhost:3000. As you edit files, the preview will automatically refresh.
 
-Live site: [www.just-band.com](http://www.just-band.com)
-
-###FOR THIS PROJECT
-
-* Supporting latest browsers versions (-2) + IE11 & IE10
-* Adapt the assets to the device (images size, scripts, templates):
-    - Checking device with [PHP](https://github.com/serbanghita/Mobile-Detect)
-* Listing all the videos of Youtube channel using the API
-* The production tools are the following:
-    - Pug (formerly Jade)
-    - SASS
-    - GruntJs
-    - PHP
-    - Javascript (jQuery)
+Use `grunt dev` to generate a dev version of the site, and just `grunt` to generate a production version.
