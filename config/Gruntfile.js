@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 
   // Variables
   const dev = ['prettify', 'shell:jekyllDev', 'csscomb', 'sass:dev', 'postcss:dev', 'browserify', 'concat:dev', 'clean:dev'],
+        stage = ['prettify', 'shell:jekyllStage', 'csscomb', 'sass:dev', 'postcss:dev', 'browserify', 'concat:dev', 'clean:dev'],
         prd = ['shell:jekyllProd', 'sass:prod', 'postcss:prod', 'browserify', 'concat:prod', 'uglify', 'htmlmin', 'clean:prod'],
         zen = require('./zen.json');
 
@@ -41,6 +42,9 @@ module.exports = function(grunt) {
     shell: {
       jekyllDev: {
         command: 'jekyll build'
+      },
+      jekyllStage: {
+        command: 'jekyll build --config "_config.yml,_config-stage.yml"'
       },
       jekyllProd: {
         command: 'jekyll build --config "_config.yml,_config-prod.yml"'
@@ -243,6 +247,7 @@ module.exports = function(grunt) {
 
   // Register Tasks
   grunt.registerTask('dev', dev);
+  grunt.registerTask('stage', stage);
   grunt.registerTask('ws', ['dev', 'browserSync', 'watch']);
   grunt.registerTask('default', prd);
 };
