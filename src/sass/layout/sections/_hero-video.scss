@@ -34,8 +34,10 @@ $hero__bkg__img-lg: '../img/hero-lg.jpg';
     left: 1rem;
     width: 80px;
     @include breakpoint ('screen-sm') {
+      top: auto;
       right: 2rem;
       bottom: 2rem;
+      left: auto;
       width: 150px;
     }
   }
