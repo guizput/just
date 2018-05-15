@@ -6,4 +6,4 @@ Use `grunt dev` to generate a dev version of the site, and just `grunt` to gener
 
 Use `grunt github` to generate the /docs/ folder for continuous integration on Github pages.
 
-More info on how to setup ovh domain [here](https://www.lewagon.com/fr/blog/siteweb-domaine-mail-personalise)
+More info on how to setup your custom domain [here](https://youtu.be/gmxxA32yrFU)
