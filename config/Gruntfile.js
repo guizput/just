@@ -5,8 +5,7 @@ module.exports = function(grunt) {
 
   // Variables
   const dev = ['prettify', 'shell:jekyllDev', 'csscomb', 'sass:dev', 'postcss:dev', 'browserify', 'concat:dev', 'clean:dev'],
-        github = ['prettify', 'shell:jekyllGithub', 'csscomb', 'sass:dev', 'postcss:dev', 'browserify', 'concat:dev', 'clean:dev', 'copy'],
-        prd = ['shell:jekyllProd', 'sass:prod', 'postcss:prod', 'browserify', 'concat:prod', 'uglify', 'htmlmin', 'clean:prod'],
+        prd = ['shell:jekyllProd', 'sass:prod', 'postcss:prod', 'browserify', 'concat:prod', 'uglify', 'htmlmin', 'clean:prod', 'copy'],
         zen = require('./zen.json');
 
   // Grunt Project Configuration
@@ -42,9 +41,6 @@ module.exports = function(grunt) {
     shell: {
       jekyllDev: {
         command: 'jekyll build'
-      },
-      jekyllGithub: {
-        command: 'jekyll build --config "_config.yml,_config-github.yml"'
       },
       jekyllProd: {
         command: 'jekyll build --config "_config.yml,_config-prod.yml"'
@@ -257,7 +253,6 @@ module.exports = function(grunt) {
   });
 
   // Register Tasks
-  grunt.registerTask('github', github);
   grunt.registerTask('dev', dev);
   grunt.registerTask('ws', ['dev', 'browserSync', 'watch']);
   grunt.registerTask('default', prd);
