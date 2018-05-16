@@ -20,5 +20,7 @@ dates:
     info: Paris - 13 mai 2017
   - name: La Dame de Canton
     info: Paris - 12 octobre 2017
+  - name: Break On Troux
+    info: Boullay-les-Troux - 9 juin 2018
 
 ---
