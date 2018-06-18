@@ -22,5 +22,7 @@ dates:
     info: Paris – 12 octobre 2017
   - name: Break On Troux
     info: Boullay-les-Troux – 9 juin 2018
+  - name: Fête de la Musique
+    info: Arkose Nation – 21 juin 2018
 
 ---
