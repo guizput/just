@@ -1,8 +1,16 @@
 .app__video {
-  padding: 0 0 4em 0;
-  background-color: #FC0D1C;
+  padding: 4em 0;
+  background: linear-gradient(to right, #870000, #190A05);
   text-align: center;
   @include container(100%, 0);
+  &__title,
+  &__text {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: $white;
+    text-align: center;
+    @include container(940px);
+  }
   &__item {
     @include make-xs-column(12, 0);
     @include make-sm-column(4, 0);
