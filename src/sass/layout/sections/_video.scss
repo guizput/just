@@ -12,6 +12,7 @@
     @include container(940px);
   }
   &__item {
+    padding: 1em;
     @include make-xs-column(12, 0);
     @include make-sm-column(4, 0);
     @include breakpoint ('screen-sm') {
@@ -38,6 +39,7 @@
     height: 0;
   }
   &__cta {
+    margin-top: 2em;
     @include make-xs-column(12, 0);
   }
 }
